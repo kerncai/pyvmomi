@@ -1,5 +1,8 @@
 main_action_pyvmomi.py 主要是基于pyvmomi来获取相关vmware集群的相关信息
 
+基于vmware官方api
+http://pubs.vmware.com/vsphere-60/index.jsp#com.vmware.wssdk.apiref.doc/vim.VirtualMachine.html
+
 取值数据流：datacenter > datastore > cluster > host > net > vswitch > portgroup > vms
 
 每个组件内都有相关字段作为关联：
