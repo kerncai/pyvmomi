@@ -1,0 +1,16 @@
+main_action_pyvmomi.py 主要是基于pyvmomi来获取相关vmware集群的相关信息
+
+取值数据流：datacenter > datastore > cluster > host > net > vswitch > portgroup > vms
+
+每个组件内都有相关字段作为关联：
+
+datacenter 和cluster ，以datacenter的name关联，这样就可以关联到datastore
+cluster 和 host以host-key或者host-name做关联
+net以host-key/host-name作为关联主键
+vswitch 以host-key/host-name 作为关联主键
+portgroup以vswitch-key/vswitch-name作为关联主键
+vm内包含了host-name和portgroup
+基于以上，整个vmware集群管理关系建立完成
+
+该脚本主要是用来CMDB获取数据源
+
